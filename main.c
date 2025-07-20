@@ -1,6 +1,10 @@
 #include<stdio.h>
 
-#ifndef OPERATOR
+#ifdef ENCODE
+#define NAME "encode"
+#define OPERATOR +
+#else
+#define NAME "decode"
 #define OPERATOR -
 #endif
 
@@ -36,6 +40,10 @@ void shift(char* text, char* key){
 }
 
 int main(int argc, char *argv[]){
+	if(argc <= 2){
+		printf("Usage: %s [message] [key]\n\n", NAME);
+		return 1;
+	}
 	shift(argv[1], argv[2]);
 	puts(argv[1]);
 }

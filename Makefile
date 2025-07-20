@@ -1,7 +1,7 @@
 all: encode decode
 
 encode: main.c
-	gcc main.c -o encode -D OPERATOR=+
+	gcc main.c -o encode -D ENCODE
 
 decode: main.c
 	gcc main.c -o decode
