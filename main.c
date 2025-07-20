@@ -33,7 +33,7 @@ void shift(char* text, char* key){
 		if(!isLetter(text[i])){
 			continue;
 		}
-		text[i] = modulo(text[i]-isLower(text[i])*'a'-isUpper(text[i])*'A' OPERATOR isLetter(text[i])*(key[j]+isLower(key[j])*'a'+isUpper(key[j])*'A'), 26) + isLower(text[i])*'a'+isUpper(text[i])*'A';
+		text[i] = modulo(text[i]-isLower(text[i])*'a'-isUpper(text[i])*'A' OPERATOR (key[j]-isLower(key[j])*'a'-isUpper(key[j])*'A'), 26) + isLower(text[i])*'a'+isUpper(text[i])*'A';
 		j++;
 	}
 
